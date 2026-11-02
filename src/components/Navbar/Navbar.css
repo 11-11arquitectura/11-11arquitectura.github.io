@@ -1,0 +1,253 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: background 0.35s, box-shadow 0.35s, backdrop-filter 0.35s;
+}
+
+.navbar__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 78px;
+}
+
+/* ── Grupo logo + tagline ───────────────────── */
+.navbar__brand-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.navbar__tagline {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-left: 8px;
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+  transition: border-color 0.35s;
+}
+
+.navbar__tagline span {
+  font-family: var(--font-b);
+  font-size: 12px;
+  font-weight: lighter; 
+  letter-spacing: 0.08em;
+  /* text-transform: uppercase; */
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.2;
+  transition: color 0.35s;
+}
+
+.navbar--solid .navbar__tagline {
+  border-left-color: rgba(0, 0, 0, 0.18);
+}
+
+.navbar--solid .navbar__tagline span {
+  color: var(--ink-2);
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  flex-shrink: 0;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.navbar__logo {
+  position: relative;
+  display: block;
+}
+
+.navbar__logo--desktop {
+  height: 34px;
+  width: auto;
+}
+
+.navbar__logo--mobile {
+  display: none;
+  height: 32px;
+  width: auto;
+}
+
+.navbar__logo-img {
+  display: block;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.35s ease;
+}
+
+.navbar__logo-img--dark {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.navbar--solid .navbar__logo-img--light {
+  opacity: 0;
+}
+
+.navbar--solid .navbar__logo-img--dark {
+  opacity: 1;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.navbar__links button {
+  font-family: var(--font-b);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 0.01em;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.25s, background 0.25s, border-color 0.25s;
+  
+}
+
+.navbar__links button:hover {
+  color: var(--accent-d);
+}
+
+.navbar__links .navbar__cta {
+  font-family: var(--font-b);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  color: #fff;
+}
+
+.navbar__links .navbar__cta:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink2);
+}
+
+.navbar--solid {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.navbar--solid .navbar__links button {
+  color: var(--ink-2);
+}
+
+.navbar--solid .navbar__links button:hover {
+  color: var(--accent-d);
+}
+
+.navbar--solid .navbar__cta {
+  border-color: var(--accent-d);
+  color: var(--ink);
+}
+
+.navbar--solid .navbar__links .navbar__cta:hover {
+  background: var(--accent-d);
+  border-color: var(--accent-d);
+  color: #fff;
+}
+
+.navbar__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.navbar__burger span {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.navbar--solid .navbar__burger span {
+  background: var(--ink);
+}
+
+@media (max-width: 920px) {
+  .navbar__logo--desktop {
+    display: none;
+  }
+
+  .navbar__logo--mobile {
+    display: block;
+  }
+
+
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__burger {
+    display: flex;
+  }
+
+  .navbar__links--open {
+    display: flex;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--ink);
+    padding: 24px 28px;
+    gap: 18px;
+  }
+
+  .navbar__links--open button,
+  .navbar--solid .navbar__links--open button {
+    color: #fff;
+  }
+
+  .navbar__links--open .navbar__cta,
+  .navbar--solid .navbar__links--open .navbar__cta {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+  }
+
+  .navbar__links--open .navbar__cta:hover {
+    background: #fff;
+    color: var(--ink);
+  }
+
+  .navbar--open .navbar__burger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .navbar--open .navbar__burger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar--open .navbar__burger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+body.nav-open {
+  overflow: hidden;
+}

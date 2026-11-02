@@ -1,0 +1,125 @@
+/* =============================================
+   SPLASH SCREEN — o11ce arquitectura
+   ============================================= */
+
+/* ── Overlay de fondo ───────────────────────── */
+.splash-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #0d0d0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.splash-overlay--hiding {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Contenedor del logo con imágenes ────────── */
+.splash-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+
+  /*
+   * --logo-h controla la altura de cada pieza del logo.
+   * Todos los tamaños y gaps se calculan proporcionalmente
+   * a partir de este valor, replicando las proporciones
+   * exactas de la imagen de referencia.
+   *
+   * Referencia: logo de 154px de alto dentro de 1024px.
+   * Letras: ~0.987 × h   |   "c": ~0.935 × h
+   * Gap o→11: 0.058 × h   |   11→c: 0.162 × h   |   c→e: 0.11 × h
+   */
+  --logo-h: clamp(24px, 4.5vw, 55px);
+}
+
+/* ── Estilo base de las imágenes del logo ────── */
+.splash-img {
+  display: block;
+  height: var(--logo-h);
+  pointer-events: none;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/*
+ * ── El "11" ─────────────────────────────────────
+ *
+ * Visible desde el inicio con un fade-in muy sutil.
+ * Es el núcleo del logo y se muestra primero.
+ *
+ * Proporciones del "11" en la referencia:
+ *   width = 0.987 × h, gap izq (o→11) = 0.058 × h,
+ *   gap der (11→c) = 0.162 × h
+ */
+.splash-img--eleven {
+  width: calc(var(--logo-h) * 0.987);
+  margin-left: calc(var(--logo-h) * 0.058);
+  margin-right: calc(var(--logo-h) * 0.058);
+  animation: splash-fade-in 0.8s ease both;
+  animation-delay: 0.1s;
+}
+
+/*
+ * ── "o" — aparece primera ───────────────────────
+ * width = 0.987 × h
+ */
+.splash-img--o {
+  width: calc(var(--logo-h) * 0.987);
+  animation: splash-letter-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.8s;
+}
+
+/*
+ * ── "c" — aparece segunda ───────────────────────
+ * width = 0.935 × h,  gap der (c→e) = 0.11 × h
+ */
+.splash-img--c {
+  width: calc(var(--logo-h) * 0.935);
+  margin-right: calc(var(--logo-h) * 0.058);
+  animation: splash-letter-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 1.4s;
+}
+
+/*
+ * ── "e" — aparece tercera ───────────────────────
+ * width = 0.987 × h
+ */
+.splash-img--e {
+  width: calc(var(--logo-h) * 0.987);
+  animation: splash-letter-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 2.0s;
+}
+
+/* ── Keyframes ───────────────────────────────── */
+
+@keyframes splash-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes splash-letter-in {
+  from {
+    opacity: 0;
+    filter: blur(14px);
+    transform: translateX(-0.1em) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0) scale(1);
+  }
+}

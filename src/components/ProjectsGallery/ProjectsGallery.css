@@ -1,0 +1,233 @@
+/* =============================================
+   PROJECTS GALLERY — o11ce arquitectura
+   ============================================= */
+
+/* ── Contenedor principal ─────────────────── */
+.pg {
+  width: 100%;
+  padding: 0 max(28px, calc((100% - var(--maxw)) / 2 + 28px));
+  margin-top: 40px;
+}
+
+/* ── Tabs ─────────────────────────────────── */
+.pg__tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.pg__tab {
+  font-family: var(--font-b);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 7px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.22s, color 0.22s, border-color 0.22s;
+  white-space: nowrap;
+}
+
+.pg__tab:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.pg__tab--active,
+.pg__tab--active:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+/* ── Grid ─────────────────────────────────── */
+.pg__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ── Tarjeta ──────────────────────────────── */
+.pg__card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+/* Envoltorio de imagen con overflow hidden para contener el zoom */
+.pg__card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-radius: 2px;
+}
+
+/* Imagen con transición de escala en hover */
+.pg__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pg__card:hover .pg__card-img {
+  transform: scale(1.07);
+}
+
+/* Etiqueta nombre — esquina superior izquierda */
+.pg__card-name-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: var(--font-b);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: rgba(10, 11, 13, 0.55);
+  backdrop-filter: blur(4px);
+  padding: 4px 9px;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* Etiqueta categoría — esquina superior derecha */
+.pg__card-cat-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: var(--font-b);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 4px 9px;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* Metadata debajo de la imagen */
+.pg__card-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 8px;
+}
+
+.pg__card-title {
+  font-family: var(--font-d);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.pg__card-year {
+  font-family: var(--font-b);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.pg__card-location {
+  font-family: var(--font-b);
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* ── Botón Ver más ────────────────────────── */
+.pg__more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.pg__more-btn {
+  font-family: var(--font-b);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  border-radius: 40px;
+  padding: 16px 36px;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.pg__more-btn:hover {
+  background: var(--accent-d);
+  color: #fff;
+  border-color: var(--accent-d);
+}
+
+/* ── Visualización 3D ─────────────────────── */
+.pg__viz {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.pg__viz-frame {
+  width: 100%;
+  height: 560px;
+  border: none;
+  display: block;
+}
+
+.pg__viz-credit {
+  font-family: var(--font-b);
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 8px;
+  text-align: right;
+}
+
+.pg__viz-credit a {
+  color: var(--accent-d);
+  text-decoration: none;
+}
+
+.pg__viz-credit a:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 900px) {
+  .pg__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .pg__viz-frame {
+    height: 380px;
+  }
+}
+
+@media (max-width: 560px) {
+  .pg {
+    padding: 0 20px;
+  }
+
+  .pg__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pg__viz-frame {
+    height: 300px;
+  }
+}
