@@ -1,6 +1,9 @@
 ﻿// import heroImg from "../../assets/navbar/hero.jpg"; // Imagen original del hero (comentada)
 import heroVideo from "../../assets/navbar/video_hero.mp4";
+import logoWhite from "../../assets/navbar/logo_white.png";
 import { ProjectsGallery } from "../../components/ProjectsGallery/ProjectsGallery";
+import { WhatsAppBtn } from "../../components/WhatsAppBtn/WhatsAppBtn";
+import { FaInstagram, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import "./Landing.css";
 
 const scrollToId = (id) => {
@@ -129,11 +132,50 @@ export const Landing = () => {
         <ProjectsGallery />
       </section>
 
-      <section className="landing-section" id="nosotros">
-        <div className="landing-section__inner">
-          <span className="eyebrow">Estudio</span>
-          <h2>Nosotros</h2>
-          <p>Sección lista para el equipo y cifras del estudio.</p>
+      <section className="landing-section about-section" id="nosotros">
+        <div className="landing-section__inner about-section__intro">
+          <span className="eyebrow">Quiénes somos</span>
+          <h2>Diseño con intención. Espacios para vivir.</h2>
+          <p>
+            En 11 11 conectamos arquitectura y construcción para crear espacios
+            funcionales, cálidos y hechos a la medida de cada historia.
+          </p>
+        </div>
+
+        <div className="about-section__team">
+          <article className="about-card">
+            <img
+              className="about-card__image"
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=85"
+              alt="Retrato de referencia de un arquitecto"
+              loading="lazy"
+            />
+            <div className="about-card__content">
+              <span className="eyebrow">Arquitecto · Diseño</span>
+              <h3>Arq. Alejandro</h3>
+              <p>
+                Da forma a espacios funcionales con identidad y atención al
+                detalle.
+              </p>
+            </div>
+          </article>
+
+          <article className="about-card">
+            <img
+              className="about-card__image"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=85"
+              alt="Retrato de referencia de un ingeniero"
+              loading="lazy"
+            />
+            <div className="about-card__content">
+              <span className="eyebrow">Ingeniero · Obra</span>
+              <h3>Arq. Nicolás</h3>
+              <p>
+                Coordina cada etapa para materializar el diseño con calidad y
+                precisión.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -145,13 +187,78 @@ export const Landing = () => {
         </div>
       </section> */}
 
-      <section className="landing-section landing-section--alt" id="contacto">
-        <div className="landing-section__inner">
+      <section className="contact-section" id="contacto">
+        <div className="contact-section__intro">
           <span className="eyebrow">Hablemos</span>
-          <h2>Contacto</h2>
-          <p>Sección lista para el formulario de cotización.</p>
+          <h2>Cuéntanos qué quieres construir.</h2>
+          <p>
+            Escríbenos por WhatsApp y conversemos sobre tu próximo proyecto.
+          </p>
+          <a
+            className="contact-section__cta"
+            href="https://wa.me/573147361534?text=Buen%20d%C3%ADa%2C%20quisiera%20obtener%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%2011%2011%20Arquitectura."
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaWhatsapp aria-hidden="true" />
+            Escríbenos por WhatsApp
+          </a>
         </div>
       </section>
+
+      <footer className="site-footer">
+        <div className="site-footer__main">
+          <div className="site-footer__brand">
+            <a href="#inicio" aria-label="11 11 Arquitectura, ir al inicio">
+              <img src={logoWhite} alt="11 11 Arquitectura" />
+            </a>
+            <p>
+              Arquitectura y construcción para crear espacios funcionales,
+              cálidos y hechos a la medida.
+            </p>
+          </div>
+
+          <nav className="site-footer__nav" aria-label="Navegación del pie de página">
+            <h3>Navegación</h3>
+            <a href="#servicios">Servicios</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+
+          <div className="site-footer__contact">
+            <h3>Contacto</h3>
+            <a
+              href="https://wa.me/573147361534?text=Buen%20d%C3%ADa%2C%20quisiera%20obtener%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%2011%2011%20Arquitectura."
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaWhatsapp aria-hidden="true" />
+              WhatsApp
+            </a>
+            <a
+              href="https://www.instagram.com/11.11arquitectura/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram de 11 11 Arquitectura"
+            >
+              <FaInstagram aria-hidden="true" />
+              Instagram
+            </a>
+            <span>
+              <FaMapMarkerAlt aria-hidden="true" />
+              Bogotá, Colombia
+            </span>
+          </div>
+        </div>
+
+        <div className="site-footer__bottom">
+          <span>© {new Date().getFullYear()} 11 11 Arquitectura. Todos los derechos reservados.</span>
+          <span>Arquitectura · Diseño interior · Construcción</span>
+        </div>
+      </footer>
+
+      <WhatsAppBtn/>
     </main>
   );
 };
