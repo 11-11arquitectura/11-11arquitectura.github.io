@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nombre": "Cliente residencial",
+    "profesion": "Propietario",
+    "servicio": "Remodelación de apartamento · Bogotá",
+    "texto": "Cumplieron tiempos y presupuesto. El acompañamiento durante toda la obra fue impecable. Quedamos encantados con el resultado final."
+  },
+  {
+    "id": 2,
+    "nombre": "Cliente comercial",
+    "profesion": "Empresario",
+    "servicio": "Adecuación de local · Bogotá",
+    "texto": "El diseño superó lo que imaginábamos y la calidad de los acabados se nota en cada detalle. Definitivamente los recomendamos."
+  },
+  {
+    "id": 3,
+    "nombre": "Cliente residencial",
+    "profesion": "Arquitecto",
+    "servicio": "Obra nueva · Bogotá",
+    "texto": "Un equipo serio y transparente. Volvería a construir con 11 11 Arquitectura sin dudarlo. La comunicación durante todo el proceso fue excelente."
+  },
+  {
+    "id": 4,
+    "nombre": "Cliente residencial",
+    "profesion": "Arquitecto",
+    "servicio": "Obra nueva · Bogotá",
+    "texto": "Un equipo serio y transparente. Volvería a construir con 11 11 Arquitectura sin dudarlo. La comunicación durante todo el proceso fue excelente."
+  }
+]

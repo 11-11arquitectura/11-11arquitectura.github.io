@@ -3,6 +3,8 @@ import heroVideo from "../../assets/navbar/video_hero.mp4";
 import logoWhite from "../../assets/navbar/logo_white.png";
 import { ProjectsGallery } from "../../components/ProjectsGallery/ProjectsGallery";
 import { WhatsAppBtn } from "../../components/WhatsAppBtn/WhatsAppBtn";
+import { InstagramBtn } from "../../components/InstagramBtn/InstagramBtn";
+import { Testimonios } from "../../components/Testimonios/Testimonios";
 import { FaInstagram, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import "./Landing.css";
 
@@ -186,6 +188,7 @@ export const Landing = () => {
           <p>Sección lista para artículos.</p>
         </div>
       </section> */}
+      <Testimonios />
 
       <section className="contact-section" id="contacto">
         <div className="contact-section__intro">
@@ -258,6 +261,7 @@ export const Landing = () => {
         </div>
       </footer>
 
+      <InstagramBtn />
       <WhatsAppBtn/>
     </main>
   );

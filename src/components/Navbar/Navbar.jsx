@@ -67,8 +67,8 @@ export const Navbar = () => {
               <img src={logoBlack} alt="" className="navbar__logo-img navbar__logo-img--dark" />
             </span>
             <span className="navbar__logo navbar__logo--mobile">
-              <img src={logoShortWhite} alt="" className="navbar__logo-img navbar__logo-img--light" />
-              <img src={logoShortBlack} alt="" className="navbar__logo-img navbar__logo-img--dark" />
+              <img src={logoWhite} alt="" className="navbar__logo-img navbar__logo-img--light" />
+              <img src={logoBlack} alt="" className="navbar__logo-img navbar__logo-img--dark" />
             </span>
           </button>
           <div className="navbar__tagline">
