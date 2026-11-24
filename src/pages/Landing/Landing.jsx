@@ -1,11 +1,14 @@
 ﻿// import heroImg from "../../assets/navbar/hero.jpg"; // Imagen original del hero (comentada)
 import heroVideo from "../../assets/navbar/video_hero.mp4";
 import logoWhite from "../../assets/navbar/logo_white.png";
+import alejandro from "../../assets/architects/alejo.jpeg"
 import { ProjectsGallery } from "../../components/ProjectsGallery/ProjectsGallery";
 import { WhatsAppBtn } from "../../components/WhatsAppBtn/WhatsAppBtn";
 import { InstagramBtn } from "../../components/InstagramBtn/InstagramBtn";
 import { Testimonios } from "../../components/Testimonios/Testimonios";
 import { FaInstagram, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+import { NuevaOficina } from "../../components/NuevaOficina/NuevaOficina";
+import { Estadisticas } from "../../components/Estadisticas/Estadisticas";
 import "./Landing.css";
 
 const scrollToId = (id) => {
@@ -32,11 +35,9 @@ export const Landing = () => {
 
         <div className="hero__inner">
           <span className="eyebrow">Arquitectura y Construcción</span>
-          <h1>Diseñamos y construimos espacios que trascienden.</h1>
-          <p>
-            Estudio arquitectónico y de construcción. Transformamos tu proyecto
-            del plano a la realidad con diseño, técnica y acabados de alta
-            calidad.
+          <h1>Diseñamos y construimos espacios con intención</h1>
+          <p className='text-justify'>
+            Somos un estudio de Arquitectura, Interiorismo y Construcción. Acompañamos tu proyecto desde el diseño técnico hasta su ejecución.
           </p>
           <div className="hero__actions">
             <button
@@ -56,17 +57,16 @@ export const Landing = () => {
           </div>
         </div>
 
-        <div className="hero__scroll">Scroll</div>
+        {/* <div className="hero__scroll">Scroll</div> */}
       </section>
 
       <section className="landing-section" id="servicios">
         <div>
           <div className="landing-section__inner">
-            <span className="eyebrow">Lo que Ofrecemos</span>
-            <h2>Servicios Integrales a la Medida de tus Necesidades</h2>
+            <span className="eyebrow">LO QUE HACEMOS</span>
+            <h2>NUESTROS SERVICIOS</h2>
             <p>
-              Acompañamos cada etapa de tu proyecto desde la concepción hasta la
-              ejecución.
+              Conoce el alcance de tu proyecto
             </p>
           </div>
 
@@ -74,50 +74,44 @@ export const Landing = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
               <div className="service-card px-8 py-10">
                 <span className="eyebrow_services">01</span>
-                <h3>Diseño Arquitectónico</h3>
-                <p>
-                  Anteproyecto, diseño y modelado de viviendas, locales y
-                  oficinas que aprovechan el espacio, la luz y la funcionalidad.
+                <h3>DISEÑO ARQUITECTÓNICO</h3>
+                <p className='text-justify'>
+                  Diseñamos y desarrollamos proyectos arquitectónicos residenciales, comerciales y de servicios, considerando la distribución, la luz y el uso de cada espacio.
                 </p>
               </div>
               <div className="service-card px-8 py-10">
                 <span className="eyebrow_services">02</span>
-                <h3>Construcción</h3>
-                <p>
-                  Levantamos tu proyecto desde cero, con supervisión de obra,
-                  estructura y entrega llave en mano bajo control de calidad.
+                <h3>CONSTRUCCIÓN</h3>
+                <p className='text-justify'>
+                  Ejecutamos proyectos desde la obra inicial hasta la entrega, con supervisión técnica, control de calidad y modalidades de administración delegada o entrega llave en mano.
                 </p>
               </div>
               <div className="service-card px-8 py-10">
                 <span className="eyebrow_services">03</span>
-                <h3>Remodelación</h3>
-                <p>
-                  Renovamos casas, apartamentos y locales con una planificación
-                  clara de plazos, presupuesto y resultados.
+                <h3>REMODELACIÓN</h3>
+                <p className='text-justify'>
+                  Transformamos viviendas, apartamentos y locales, tanto en obra gris como en espacios existentes. Planificamos el alcance, los plazos y el presupuesto para cuidar cada etapa de la ejecución.
                 </p>
               </div>
               <div className="service-card px-8 py-10">
                 <span className="eyebrow_services">04</span>
-                <h3>Interiorismo</h3>
-                <p>
-                  Interiores personalizados con propuesta de iluminación,
-                  pensados para ambientes cómodos de habitar.
+                <h3>INTERIORISMO</h3>
+                <p className='text-justify'>
+                  Asesoramos tu proyecto en la elección de materiales, iluminación y distribución para lograr interiores cómodos, funcionales y acordes con tu estilo.
                 </p>
               </div>
               <div className="service-card px-8 py-10">
                 <span className="eyebrow_services">05</span>
-                <h3>Licencias y trámites</h3>
-                <p>
-                  Tramitamos licencias de construcción y normativa para que tu
-                  obra avance sin retrasos.
+                <h3>LICENCIAS Y ESTUDIOS TÉCNICOS</h3>
+                <p className='text-justify'>
+                  Gestionamos licencias de reconocimiento, obra nueva, demolición, ampliación y modificación. También realizamos estudios de suelos y diseños arquitectónicos y estructurales para respaldar cada trámite.
                 </p>
               </div>
               <div className="service-card px-8 py-10">
                 <span className="eyebrow_services">06</span>
-                <h3>Mobiliario</h3>
-                <p>
-                  Diseñamos y elegimos muebles y complementos que dan carácter y
-                  armonía a cada ambiente.
+                <h3>MOBILIARIO</h3>
+                <p className='text-justify'>
+                  Desarrollamos soluciones de mobiliario para tu proyecto, desde el diseño y la fabricación hasta la selección de cada pieza.
                 </p>
               </div>
             </div>
@@ -125,9 +119,11 @@ export const Landing = () => {
         </div>
       </section>
 
+      <Estadisticas />
+
       <section className="landing-section landing-section--alt pg-section" id="proyectos">
         <div className="landing-section__inner">
-          <span className="eyebrow">Portafolio</span>
+          <span className="eyebrow">PORTAFOLIO</span>
           <h2>Proyectos que hablan por nosotros</h2>
           <p>Selección de nuestros trabajos más destacados.</p>
         </div>
@@ -136,11 +132,10 @@ export const Landing = () => {
 
       <section className="landing-section about-section" id="nosotros">
         <div className="landing-section__inner about-section__intro">
-          <span className="eyebrow">Quiénes somos</span>
-          <h2>Diseño con intención. Espacios para vivir.</h2>
+          <span className="eyebrow">QUIÉNES SOMOS</span>
+          <h2>DISEÑO Y CONCEPTO CON INTENCIÓN</h2>
           <p>
-            En 11 11 conectamos arquitectura y construcción para crear espacios
-            funcionales, cálidos y hechos a la medida de cada historia.
+            En ONCE 11 ARQUITECTURA conectamos la arquitectura para crear espacios funcionales, estéticos y hechos a la medida de cada historia.
           </p>
         </div>
 
@@ -148,36 +143,37 @@ export const Landing = () => {
           <article className="about-card">
             <img
               className="about-card__image"
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=85"
+              src={alejandro}
               alt="Retrato de referencia de un arquitecto"
               loading="lazy"
             />
             <div className="about-card__content">
-              <span className="eyebrow">Arquitecto · Diseño</span>
-              <h3>Arq. Alejandro</h3>
+              <span className="eyebrow">ARQUITECTO - OBRA</span>
+              <h3>ARQ. ALEJANDRO ARIAS</h3>
               <p>
-                Da forma a espacios funcionales con identidad y atención al
-                detalle.
+                Dirección y Ejecución de Obra Civil e Interiores.
               </p>
+              <p className='span'>Coordinador de Proyectos de Consultoría.</p>
             </div>
           </article>
-
           <article className="about-card">
             <img
               className="about-card__image"
               src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=85"
-              alt="Retrato de referencia de un ingeniero"
+              alt="Retrato de referencia de un arquitecto"
               loading="lazy"
             />
             <div className="about-card__content">
-              <span className="eyebrow">Ingeniero · Obra</span>
-              <h3>Arq. Nicolás</h3>
+              <span className="eyebrow">ARQUITECTO - DISEÑO</span>
+              <h3>ARQ. NICOLAS CASTELLANOS</h3>
               <p>
-                Coordina cada etapa para materializar el diseño con calidad y
-                precisión.
+                Proyectista en el área de Diseño y Visualización 3D.
               </p>
+              <p className='span'>Diseñador BIM para proyectos técnicos.</p>
             </div>
           </article>
+
+          
         </div>
       </section>
 
@@ -188,6 +184,7 @@ export const Landing = () => {
           <p>Sección lista para artículos.</p>
         </div>
       </section> */}
+      <NuevaOficina />
       <Testimonios />
 
       <section className="contact-section" id="contacto">

@@ -1,0 +1,165 @@
+/* ============================================================
+   ESTADÍSTICAS – banda de cifras animadas
+   Fondo: ink oscuro (#15161a) → contrasta con secciones paper
+   ============================================================ */
+
+.estadisticas {
+  position: relative;
+  background: var(--ink);
+  padding: 86px max(28px, calc((100% - var(--maxw)) / 2 + 28px));
+  overflow: hidden;
+}
+
+/* ── Cuñas SVG de bordes diagonales ── */
+.estadisticas__wedge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 40px;
+  display: block;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.estadisticas__wedge--top {
+  top: 0;
+}
+
+.estadisticas__wedge--bottom {
+  bottom: 0;
+}
+
+/* ── Glow decorativo de fondo ── */
+.estadisticas::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(205, 111, 63, 0.07) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ── Contenedor interior ── */
+.estadisticas__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+/* ── Eyebrow ── */
+.estadisticas__eyebrow {
+  font-family: var(--font-d);
+  font-size: 11px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent-d);
+}
+
+/* ── Grid de tarjetas ── */
+.estadisticas__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  width: 100%;
+  max-width: 860px;
+}
+
+/* ── Tarjeta individual ── */
+.estadisticas__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 40px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.03);
+  transition: background 0.35s ease, border-color 0.35s ease;
+  cursor: default;
+
+  /* Animación de entrada escalonada */
+  animation: stats-fadeUp 0.7s ease both;
+}
+
+.estadisticas__card:hover {
+  background: rgba(205, 111, 63, 0.06);
+  border-color: rgba(205, 111, 63, 0.3);
+}
+
+/* ── Número animado ── */
+.estadisticas__number {
+  font-family: var(--font-d);
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: #fff;
+}
+
+/* ── Divisor entre número y etiqueta ── */
+.estadisticas__divider {
+  width: 28px;
+  height: 2px;
+  background: var(--accent-d);
+  border-radius: 1px;
+  opacity: 0.75;
+  flex-shrink: 0;
+}
+
+/* ── Etiqueta ── */
+.estadisticas__label {
+  font-family: var(--font-d);
+  font-size: clamp(12px, 1.1vw, 14px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── Animación de entrada ── */
+@keyframes stats-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .estadisticas {
+    padding: 72px 28px;
+  }
+
+  .estadisticas__grid {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .estadisticas__card {
+    padding: 32px 20px;
+  }
+
+  .estadisticas__number {
+    font-size: clamp(40px, 12vw, 56px);
+  }
+}

@@ -107,14 +107,13 @@ export const ProjectsGallery = () => {
       {activeTab === "Visualización" && (
         <div className="pg__viz">
           <iframe
-            width="100%"
-            height="450px"
-            frameborder="0"
-            allowfullscreen
-            allow="xr-spatial-tracking; gyroscope; accelerometer"
-            scrolling="no"
-            src="https://kuula.co"
-          ></iframe>
+            className="pg__viz-frame"
+            title="Visualización 360° – 11 11 Arquitectura"
+            src="https://kuula.co/share/collection/7d7Mq?logo=0&info=0&fs=1&vr=1&sd=1&initload=0&theme=000000ff&thumbs=1"
+            allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen; autoplay"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       )}
 

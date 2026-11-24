@@ -21,7 +21,7 @@
 .navbar__brand-group {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 13px;
   flex-shrink: 0;
 }
 
@@ -78,6 +78,11 @@
   display: none;
   height: 32px;
   width: auto;
+}
+
+.navbar__logo--mobile .navbar__logo-img{
+  height: 100%;
+  width: 7rem;
 }
 
 .navbar__logo-img {

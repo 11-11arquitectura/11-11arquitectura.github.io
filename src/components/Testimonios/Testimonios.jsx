@@ -80,6 +80,7 @@ export const Testimonios = () => {
           Cada proyecto es una historia. Estas son las palabras de quienes
           eligieron construir con 11&nbsp;11.
         </p>
+        <br/>
       </div>
 
       <div className="testimonios-carousel">
